@@ -6,7 +6,7 @@ Free to use. Made by one independent developer. Website and live preview: https:
 
 ## Features
 
-- **Live activities in the notch**: now playing with equalizer, live synced lyrics, timer and stopwatch, volume indicator, notification banners, charging status. When nothing is happening, it shows a small face that blinks (and falls asleep when you're away), or a clock if you prefer.
+- **Live activities in the notch**: now playing with equalizer, live synced lyrics, timer and stopwatch, volume indicator, notification banners, charging status. When nothing is happening, a small light drifts slowly across the notch (and settles into a slow pulse when you're away), or it shows the time if you prefer.
 - **Pages in the panel** (swipe left/right with two fingers on the touchpad, or use the arrows):
   - Music: cover, visualizer, progress, shuffle, skip and synced lyrics, on frosted glass tinted by the cover
   - Notifications: recent Windows notifications
@@ -37,31 +37,30 @@ Settings live in the panel: right-click the notch and choose **Settings**. To qu
 
 Requires Windows 10 version 2004 (build 19041) or newer, or Windows 11.
 
-## You'll probably see a warning. That's expected.
+## Screens Windows may show while installing
 
-Seven is new, and Windows hasn't seen it downloaded many times yet, so it shows a caution message. Here's how to get past it.
+Windows double-checks programs it hasn't met often, and every new version of Seven starts fresh.
 
-**In your browser: "SevenSetup.exe isn't commonly downloaded"**
+| Where | What it says | What to click |
+|---|---|---|
+| Your browser's downloads | "isn't commonly downloaded" | **…** → **Keep** → **Show more** → **Keep anyway** |
+| When you open the installer | "Windows protected your PC" | **More info** → **Run anyway** |
 
-1. In your downloads, click **See more** (or **…**) next to the file.
-2. Choose **Keep**.
-3. Click **Show more**, then **Keep anyway**.
+## What Seven does, and doesn't
 
-**When you open it: "Windows protected your PC"**
+It does:
 
-1. Click **More info**, then **Run anyway**.
-2. Follow the installer. Seven appears at the top of your screen.
+- Install into your user folder without admin rights, and uninstall cleanly from Settings → Apps.
+- Keep one local file, `%AppData%\Seven\data.json`, for your to-dos, water count, shelf links and settings. It's saved through a temporary file, so a crash can't empty it.
+- Show Windows notifications in the notch after Windows asks for your permission.
+- Start with Windows only if you leave that box ticked in the installer (a value named `Seven` under `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`, removed again by the uninstaller).
 
-The warning will fade as more people install Seven and Windows gets to know it.
+It never:
 
-## Why you can trust it
-
-- **No admin rights** and nothing hidden: it installs for your user only and uninstalls cleanly from Settings.
-- **Your data stays on your PC.** No account, no telemetry, no analytics, no server of its own. Your to-do list, water count, shelf items and settings are saved only in `%AppData%\Seven\data.json`.
-- **Clipboard history is opt-in.** It's off until you turn it on in Settings. It keeps text only, in memory, never on disk, skips anything password managers mark as private, and is erased when you turn it off or close Seven.
-- **No keyboard logging.** Seven never reads what you type. Volume and brightness come from the Windows audio and WMI interfaces, not from your keys.
-- **Startup is your choice.** Only if you tick it in the installer, a value named `Seven` is added to `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`. The uninstaller removes it.
-- **Notifications** are read through the official Windows notification permission, which Windows asks you to allow. They are only shown in the notch and never sent anywhere.
+- Reads your keys. Volume and brightness come from the Windows audio and WMI interfaces.
+- Saves your clipboard. Clipboard history is off by default; when on, it's text only, in memory, skips what password managers mark private, and is gone when Seven closes.
+- Copies your files. The shelf only remembers where they are.
+- Has an account, telemetry, analytics or a server of its own.
 
 ### The only network connections
 
