@@ -1,22 +1,26 @@
 # Seven
 
-A Dynamic Island for Windows. A small black pill sits at the top of your screen, shows what's going on (music, timers, notifications, charging), and opens into a panel when you hover it.
+A Dynamic Island for Windows. A small black notch grows out of the top edge of your screen, shows what's going on (music, timers, notifications, charging), and opens into a panel when you hover it.
 
-Free to use. Made by one independent developer.
+Free to use. Made by one independent developer. Website and live preview: https://sevennxtdoor.github.io/Seven/
 
 ## Features
 
-- **Live activities in the pill**: now playing with equalizer, live synced lyrics, timer and stopwatch, volume indicator, notification banners, charging status. When nothing is happening, the pill shows a small face that blinks (and falls asleep when you're away).
-- **Pages in the panel** (swipe left/right with two fingers on the touchpad, or click the dots):
-  - Music: cover, controls, progress, synced lyrics
+- **Live activities in the notch**: now playing with equalizer, live synced lyrics, timer and stopwatch, volume indicator, notification banners, charging status. When nothing is happening, it shows a small face that blinks (and falls asleep when you're away), or a clock if you prefer.
+- **Pages in the panel** (swipe left/right with two fingers on the touchpad, or use the arrows):
+  - Music: cover, visualizer, progress, shuffle, skip and synced lyrics, on frosted glass tinted by the cover
   - Notifications: recent Windows notifications
   - Controls: volume and screen brightness
   - Timer and stopwatch
   - Weather and calendar
   - To-do list
   - Water intake tracker
-  - Shelf: drop files on the pill to keep them handy, drag them back out later
-- **Stays out of the way**: when a fullscreen video or game is running, the pill hides and leaves only a thin colored line at the top. When a maximized window covers it, it hides completely. Hold the cursor at the top edge of the screen to peek.
+  - Shelf: drop files on the notch to keep them handy, drag them back out later
+  - Clipboard history (off by default, text only, kept in memory)
+  - Settings
+- **Swipe to skip or seek**: swipe sideways over the cover to change song, or to jump 10 seconds.
+- **Music card when away**: with music playing, a glass card with the controls appears in the middle of the screen after a minute without input.
+- **Stays out of the way**: during a fullscreen video or game it leaves only a thin colored line at the top. Behind a maximized window it hides, and drops down briefly for volume changes, notifications and timers. Hold the cursor at the top edge of the screen to peek.
 - Smooth spring animations, rendered through the Windows compositor (DWM).
 
 ## Install
@@ -27,7 +31,9 @@ Free to use. Made by one independent developer.
 
 The installer bundles the .NET runtime, so you don't need to install anything else.
 
-To quit Seven, right-click the pill and choose **Quit Seven**. To remove it, use **Settings → Apps → Installed apps → Seven → Uninstall**.
+Updating keeps your data: just run the new installer over the old version.
+
+Settings live in the panel: right-click the notch and choose **Settings**. To quit Seven, right-click the notch and choose **Quit Seven**. To remove it, use **Settings → Apps → Installed apps → Seven → Uninstall**.
 
 Requires Windows 10 version 2004 (build 19041) or newer, or Windows 11.
 
@@ -51,10 +57,11 @@ The warning will fade as more people install Seven and Windows gets to know it.
 ## Why you can trust it
 
 - **No admin rights** and nothing hidden: it installs for your user only and uninstalls cleanly from Settings.
-- **Your data stays on your PC.** No account, no telemetry, no analytics, no server of its own. Your to-do list, water count and shelf items are saved only in `%AppData%\Seven\data.json`.
+- **Your data stays on your PC.** No account, no telemetry, no analytics, no server of its own. Your to-do list, water count, shelf items and settings are saved only in `%AppData%\Seven\data.json`.
+- **Clipboard history is opt-in.** It's off until you turn it on in Settings. It keeps text only, in memory, never on disk, skips anything password managers mark as private, and is erased when you turn it off or close Seven.
 - **No keyboard logging.** Seven never reads what you type. Volume and brightness come from the Windows audio and WMI interfaces, not from your keys.
 - **Startup is your choice.** Only if you tick it in the installer, a value named `Seven` is added to `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`. The uninstaller removes it.
-- **Notifications** are read through the official Windows notification permission, which Windows asks you to allow. They are only shown in the pill and never sent anywhere.
+- **Notifications** are read through the official Windows notification permission, which Windows asks you to allow. They are only shown in the notch and never sent anywhere.
 
 ### The only network connections
 
